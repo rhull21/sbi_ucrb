@@ -404,17 +404,63 @@
 13. Google Doc with Peter's Notes from 06/07
   * https://docs.google.com/document/d/1fDTu-kN__vuLPHKoR9d5wM_7P_uqq1C2DWcAXS83HYE/edit
 
-14. Moder Statistics - Peter's Class
+14. Modern Statistics - Peter's Class
   * https://sml505.pmelchior.net/14-ApproximateInference.html#simulation-based-inference
   * sml505/principled
+  * Final Chapter Simulation-Based Inference:
+    * In this chapter, we have seen that approximate methods allow for arbitrarily complex generation mechanisms, for which a likelihood or posterior may not even be known, to be modeled probabilistically. This opens the door for Bayesian inference to all phenomena that can be simulated, and thus plays an ever increasing role in many areas of science.
 
 15. Streamflow Simulation in Data-Scarce Basins Using Bayesian and Physics-Informed Machine Learning Models
   * Lu et al 2021
   * Bayesian LSTM
   * https://journals.ametsoc.org/view/journals/hydr/aop/JHM-D-20-0082.1/JHM-D-20-0082.1.xml
 
+
+16. A basic review of fuzzy logic applications in hydrology and water resources
+  * https://link.springer.com/article/10.1007/s13201-020-01276-2??utm_source=other_website&error=cookies_not_supported&code=bc1bc399-fe4f-4c3e-a87a-1fd799738fce
+  * Fuzzy logic is a well-known soft computing tool which develops the workable algorithms by embedding structured human knowledge. It is a logical system that presents a model designed for human interpretation modes that are inexact rather than precise. The fuzzy logic system can be applied to design intelligent systems on the basis of information expressed in human language (Bai et al. 2006). Fuzzy logic is one of the forms of artificial intelligence; however, its history and uses are newer than artificial intelligence based expert systems. Fuzzy logic deals with problems that have imprecision, vagueness, approximations, uncertainty or qualitative mess or partial truth.
+
+17. Comparison of Likelihood-Free Inference Approach and a Formal Bayesian Method in Parameter Uncertainty Assessment: Case Study with a Single-Event Rainfall–Runoff Model
+  * https://ascelibrary.org/doi/full/10.1061/%28ASCE%29HE.1943-5584.0002048?casa_token=Y1zKDswTGfMAAAAA%3A8Z_EC7dFyzl6jujOuUlehljRFXRQwdpFnzvb9sZ5zDw28Ghoa1Dkp4zb0J3QSlDKDEhFq4Ulog
+  * Abstract:
+    * DREAM (differential evolution adaptive metropolis) algorithms are applied to determine parameter uncertainty in single-event rainfall-runof model, and were used to correct rainfall forcing errors.
+    * Note - DREAM_zs and DREAM_abc
+    * Note - these approaches were also used to explore the posterior parameters in high-dimensional inference problems. (in a likelihood free approach)
+  * Introduction:
+    * Modles are simplified representations of real-world systems.
+    * This study uses a rainfall-runoff model
+    * Natural randomness, uncertainty of parameters, structural inaccuracies, and observational errors yield inaccuracies in model predictions
+    * These Model defeciencies result in parameter uncertainty (i.e. model parameters cannot be exactly specified)
+      * even parameter estimation via calibration is fraught with error
+    * Therefore, uncertainty analysis is necessary to quantify the uncertainty of predictions
+    * Typically, uncertainty estimation is facilitated via a Bayesian framework approach, like Markov Chain Monte Carlo (MCMC)
+      * However, this requires the appropriate selection of a likelihood function (which can be fraught)
+      * Violation of key assumptions can cause poor decisions around parameter values.
+    * Although approaches can be made to remedy and correct for these assumptions
+      * i.e. Box-Cox transformation and auto-regressive schemes
+      * But these approaches listed above can increase the number of parameters needed to estimate
+    * Enter DREAM_ZS (Differential Evolution Adaptive Metropolist Algorithm), which uses the MCMC scheme to estimate the parameters in high-dimensional problems. It defines a likelihood fnction (I think) to define the uncertainty of the posterior parameter.
+    * Alternatively, given the difficulty to configure an appropriate likelihood function, likelihood-free inference is an interesting alternative. This method can be used in situations where the inference method is prohibitive or cannot be formulated explicitly. Enter DREAM_ABC. A form of Approximate Bayesian Computation.
+
+18. Gradient boosting machine assisted approximate Bayesian computation for uncertainty analysis of rainfall-runoff model parameters
+  * https://www.researchgate.net/profile/Frederick-Bennett-2/publication/337243288_Gradient_boosting_machine_assisted_approximate_Bayesian_computation_for_uncertainty_analysis_of_rainfall-runoff_model_parameters/links/5dd5e86f299bf11ec866da53/Gradient-boosting-machine-assisted-approximate-Bayesian-computation-for-uncertainty-analysis-of-rainfall-runoff-model-parameters.pdf
+  * F.R. Bennett 2019
+  * Abstract:
+    * Bayesian Inference - approach to diagnostic model evaluation
+    * Typically Generalised Likelihood Uncertainty Estimation (GLUE) or Markove Chain Monte Carlo (MCMC) sampling (likelihood-estimation approaches)
+    * Alternatively , ABC is a likelihoo-dfree Bayesian approach.
+    * [This is a simlar approach to my own work]
+    * This paper uses SMC-ABC (A Sequential Monte Carlo Bayesian Framework) and XGBoost (a 'surrogate' model similar to an emulator) as a framework for model parameter inference
+
+19. Stochastic inversion for soil hydraulic parameters in the presence of model
+error: An example involving ground-penetrating radar monitoring of
+infiltration
+  * https://www.sciencedirect.com/science/article/pii/S0022169418309636?casa_token=LW3slNzdlYoAAAAA:Ayhov4G14XRdOTxFebDvqYjJ729u-7fbbaPPT0K7gZq5w-CHYTA0w6VO201r-6ECLScSZ3DL6w
+  * Kopke et al
+  * 
+
 ### Further Reading:
-  * Some further applictions of SBI and specifically DELFI in hydrology 
+  * Some further applictions of SBI and specifically DELFI in hydrology
   * Alsing et al 2018b
   * Papamakarios & Murray 2016
   * Papmamakarios et al 2018
@@ -426,6 +472,39 @@
 
 ### Questions
   * What is the difference between Bayesian and Frequentist Schools of Thoughts?
+    * Frequentist Inference:
+      * https://en.wikipedia.org/wiki/Frequentist_inference
+      * A type of statistical inference that draws conclusions from sample data by emphasizing the frequency or proportion of the data.
+        * Statistical Hypothesis Testing
+        * Confidence Intervals
+        * ^ concepts that are based out of requentist framework.
+      * Concept - any given experiment can be considred one of an infinite sequence of possible repetitions of the same experiment, each capable of producing statistically independents results.
+      * The 'correct' conclusion should be drawn with high probability along a set of repetitions
+        * i.e. repeating the same test many times and using the most common result.
+    * Bayesian Inference:
+      * https://en.wikipedia.org/wiki/Bayesian_inference
+      * A method of statistical inference from Baye's therom used to update probability of a hypothesis as more information becomes available.
+    * major differences between frequentist and bayesian inference
+      * Unknown Parameters:
+        * Frequentist - treat as having fixed but unknown values that we cannot treat as random variates, and thus have no associated probabilities.
+        * Bayesian - Allows for these unknown probabilities to have associated probabilities. These probabilities represent the scientist's belief that given values of the parameter could be true.
+      * Probablities:
+        * Bayesian - probability distribution exists for what is known about the parameters given the results of experimentation
+        * Frequentist - true or false conclusion from a significance test.
+    * More comments on the difference between Frequentist and Bayesian Statistics:
+      * https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english
+      * Here is how I would explain the basic difference to my grandma:
+        * I have misplaced my phone somewhere in the home. I can use the phone locator on the base of the instrument to locate the phone and when I press the phone locator the phone starts beeping.
+        * **Problem: Which area of my home should I search?**
+        * Frequentist Reasoning
+          * I can hear the phone beeping. I also have a mental model which helps me identify the area from which the sound is coming. Therefore, upon hearing the beep, I infer the area of my home I must search to locate the phone.
+        * Bayesian Reasoning
+          * I can hear the phone beeping. Now, apart from a mental model which helps me identify the area from which the sound is coming from, I also know the locations where I have misplaced the phone in the past. So, I combine my inferences using the beeps and my prior information about the locations I have misplaced the phone in the past to identify an area I must search to locate the phone.
+          Tongue firmly in cheek:
+      * A Bayesian defines a "probability" in exactly the same way that most non-statisticians do - namely an indication of the plausibility of a proposition or a situation. If you ask them a question about a particular proposition or situation, they will give you a direct answer assigning probabilities describing the plausibilities of the possible outcomes for the particular situation (and state their prior assumptions).
+      * A Frequentist is someone that believes probabilities represent long run frequencies with which events occur; if needs be, they will invent a fictitious population from which your particular situation could be considered a random sample so that they can meaningfully talk about long run frequencies. If you ask them a question about a particular situation, they will not give a direct answer, but instead make a statement about this (possibly imaginary) population. Many non-frequentist statisticians will be easily confused by the answer and interpret it as Bayesian probability about the particular situation.
+      * However, it is important to note that most Frequentist methods have a Bayesian equivalent that in most circumstances will give essentially the same result, the difference is largely a matter of philosophy, and in practice it is a matter of "horses for courses".
+      * As you may have guessed, I am a Bayesian and an engineer. ;o)
   * What is PEST, really, and how is it distinct from simulation-based-inference?
   * What is MCMC?
     * Overview:
@@ -491,3 +570,13 @@
   * What is active learning?
     - https://en.wikipedia.org/wiki/Active_learning_(machine_learning)
     - Active Learning is a special case of machine learning in which learning algorithms can interactively query a user (or other information source) to label new data points with the desired outputs.
+  * What is the difference betwen the likelihood and fiducial values of a distribution?
+    * fiducial inference - https://en.wikipedia.org/wiki/Fiducial_inference
+      * an approach by which conclusions can be drawn from samples of data
+      * This type of inference has fallen out of favor due to the usage of frequentist, Bayesian, and Decision Theory inference
+      * Fiducial comes from the term 'faith'.
+      * It is the attempt to perform inverse probability without calling on prior probability distributions.
+      * Idea stems from the usage of a 'sufficient' statistic to describe an entire parameter.
+      * Still unclear
+  * What is DREAM_ZS and DREAM_abc?
+    * differential evolution adaptive metropolist algorithms
