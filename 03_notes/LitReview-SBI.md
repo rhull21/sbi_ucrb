@@ -457,7 +457,14 @@ error: An example involving ground-penetrating radar monitoring of
 infiltration
   * https://www.sciencedirect.com/science/article/pii/S0022169418309636?casa_token=LW3slNzdlYoAAAAA:Ayhov4G14XRdOTxFebDvqYjJ729u-7fbbaPPT0K7gZq5w-CHYTA0w6VO201r-6ECLScSZ3DL6w
   * Kopke et al
-  * 
+
+20. Exponential convergence rates for the kernel bivariate distribution function estimator under NSD assumption with application to hydrology data
+  * Kheyri et al
+  * https://www.tandfonline.com/doi/abs/10.1080/03610926.2020.1808900?casa_token=9fiR6ztkIVAAAAAA%3AcIBWmyj_aypQM-NMRtH7vgAuJAgmS25BpTdGB8sd9PMd_Pmi1G-JLpudch9Kagih-WsC0uq4Yg2T&journalCode=lsta20
+
+21. Model-based inference of conditional extreme value distributions with hydrological applications
+  * Towe et al
+  * https://onlinelibrary.wiley.com/doi/full/10.1002/env.2575
 
 ### Further Reading:
   * Some further applictions of SBI and specifically DELFI in hydrology
@@ -468,6 +475,9 @@ infiltration
   * Nott, D. J., Fan, Y., Marshall, L. and Sisson, S. A. (2014). Approximate Bayesian Computation and Bayes linear analysis: Toward HighDimensional ABC. Journal of Computational and Graphical Statistics 23 65-86.
   * Vrugt, J. A. and Sadegh, M. (2013). Toward diagnostic model calibration and evaluation: Approximate Bayesian Computation. Water Resources Research 49 4335-4345.
   * Read Kavetski et al (2018) an dWesterberg and McMillan (2015) for more information about signature domain
+  * Chaopeng Shen
+    * http://water.engr.psu.edu/shen/hydroDL.html
+    * https://github.com/mhpi/hydroDL
 
 
 ### Questions
